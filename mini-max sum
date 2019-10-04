@@ -1,0 +1,18 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+arr1=[]
+# Complete the miniMaxSum function below.
+def miniMaxSum(arr):
+    for i in range(len(arr)):
+        p=sum(arr)-arr[i]
+        arr1.append(p)  
+    print(min(arr1), max(arr1))
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
