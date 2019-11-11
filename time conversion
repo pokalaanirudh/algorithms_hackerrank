@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the timeConversion function below.
+#
+def timeConversion(s):
+    #
+    # Write your code here.
+    #
+    am=s.find("AM")
+    h=int(s[:2])
+    m=(s[3:5])
+    sec=(s[6:8])
+    sol=""
+    if am!=-1:
+        h1=round(h%12,2)
+        if h1<10:
+            sol="0"+str(h1)+":"+m+":"+sec
+            return(sol)
+        else:
+            sol=str(h1)+":"+m+":"+sec
+            return(sol)
+            
+    else: 
+        h1=12+h%12  
+        sol= str(h1)+":"+m+":"+sec
+        return(sol)
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()
